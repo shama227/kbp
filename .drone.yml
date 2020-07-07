@@ -43,3 +43,13 @@ pipeline:
     image: dstrebel/drone-kubectl-helm
     secrets: [ kubernetes_server, kubernetes_cert, kubernetes_token ]
     kubectl: "get deployment frontend"
+
+repo: github.com/shama227/kbp/frontend
+
+publish:
+		image: plugins/docker
+		dockerfile: ./frontend/Dockerfile
+		context: ./frontend
+		repo: dstrebel/frontend
+		tags: [latest, v2]
+		secrets: [ docker_username, docker_password ]
