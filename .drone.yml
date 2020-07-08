@@ -12,14 +12,12 @@ pipeline:
       - cd frontend
       - npm i redis --save
       - npm test
-  
-  repo: riotpurpp/frontend
-  
+
   publish-frontend:
     image: plugins/docker
     dockerfile: ./frontend/Dockerfile
     context: ./frontend
-    repo: dstrebel/frontend
+    repo: riotpurpp/frontend
     tags: [latest, v2]
     secrets: [ docker_username, docker_password ]
 
