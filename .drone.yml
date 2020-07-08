@@ -13,13 +13,7 @@ pipeline:
       - npm i redis --save
       - npm test
 
-  publish-redis:
-    image: plugins/docker
-    dockerfile: ./redis/Dockerfile
-    context: ./redis
-    repo: dstrebel/redis
-    tags: [latest, v2]
-    secrets: [ docker_username, docker_password ]
+	repo: riotpurpp/frontend
 
   publish-frontend:
     image: plugins/docker
