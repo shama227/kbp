@@ -12,9 +12,9 @@ pipeline:
       - cd frontend
       - npm i redis --save
       - npm test
-
-	repo: riotpurpp/frontend
-
+  
+  repo: riotpurpp/frontend
+  
   publish-frontend:
     image: plugins/docker
     dockerfile: ./frontend/Dockerfile
